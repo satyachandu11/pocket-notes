@@ -1,0 +1,38 @@
+.mainScreen{
+    background-color: #DAE5F5;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+}
+
+.mainScreen img{
+    height: 300px;
+    width: 500px;
+    
+}
+
+.mainScreen h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 0.7rem;
+}
+
+.para1{
+    font-weight: normal;
+    color: #292929;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    margin-bottom: -3rem;
+}
+
+.mainScreen .para2{
+    display: flex;
+    margin-top: 16rem;
+    font-weight: normal;
+}

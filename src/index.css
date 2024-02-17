@@ -1,0 +1,10 @@
+/* Mobile Responsiveness Section */
+
+@media (max-width: 768px){
+  
+
+  .main-section{
+    display: none;
+  }
+  
+}

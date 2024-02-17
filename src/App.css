@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Universal Styling */
+
 *{
   margin: 0;
   padding: 0;
@@ -11,10 +15,21 @@
 
 .sidebar{
   width: 25rem;
-  
+  height: 100%;
+  position: relative;
 }
 
 .main-section{
   flex-grow: 1;
-  background-color:aquamarine;
 }
+
+.grpIconStyle{
+  transition: all 0.2s ease;
+  transform: scale(1);
+}
+
+.grpIconStyle:active{
+  transform: scale(0.95);
+}
+
+

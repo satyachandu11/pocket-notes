@@ -1,0 +1,99 @@
+.modalOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(47, 47, 47, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent{
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    margin-top: 0;
+    transition: margin-top 0.3s;
+}
+
+.modalContent h3{
+    padding-bottom: 1rem;
+    font-size: 25px;
+    
+}
+
+.groupNameInput{
+    border-radius: 10px;
+    padding: 0.3rem;
+    width: 13.5rem;
+    border: 2px solid #CCCCCC ;
+    padding-left: 0.7rem;
+    
+}
+
+.modalContent label{
+    font-size: 1rem;
+}
+
+.colorSelect{
+    
+    display: flex; /* Display children (color options) in a row */
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  
+}
+
+.colorSelect option{
+    display: block;
+    width: 100px;
+    padding: 5px;
+}
+
+.colorCircle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  display: inline-block;
+  margin-right: 10px; 
+  cursor: pointer; 
+}
+
+.colorCircle:active{
+    border: 2px solid black;
+}
+
+.submitButton{
+    background-color: #001F8B;
+    color: #fff;
+    padding: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 8px;
+    border: none;
+    margin-left: 12rem;
+    transition: all 0.2s ease;
+    transform: scale(1);
+}
+
+.submitButton:active{
+  transform: scale(0.95);
+}
+
+
+
+@media (max-width: 768px){
+    .submitButton{
+        margin-left: 6rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .modalContent{
+        margin-top: -12rem;
+    }
+}
