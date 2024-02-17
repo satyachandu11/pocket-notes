@@ -13,7 +13,7 @@ function MainScreenDefault() {
         Pocket Notes on up to 4 linked devices and 1 mobile phone
       </p>
       <p className={styles.para2}>
-        {/* <LockIcon /> end-to-end encrypted */}
+        <LockIcon /> end-to-end encrypted
       </p>
     </div>
   );
