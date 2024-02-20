@@ -30,7 +30,7 @@ const NotesProvider = ({ children }) => {
   };
 
   const getNotesByGroupId = (groupId) => {
-    return notes.filter((note) => note.groupId === groupId);
+    return notes.filter((note) => note.groupId.id === groupId.id);
   };
 
   
