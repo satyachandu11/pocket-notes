@@ -9,16 +9,12 @@ const NotesProvider = ({ children }) => {
 
   useEffect(() => {
 
-    localStorage.removeItem('notes');
-
     // Load Notes from local storage
     const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
     setNotes(storedNotes);
   }, []);
 
   useEffect(() => {
-
-     localStorage.removeItem("notes");
     // Update notes in local storage whenever notes is added
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);

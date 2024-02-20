@@ -6,7 +6,7 @@ const GroupProvider = ({ children })=>{
     const [groups, setGroups] = useState([]);
 
     useEffect(()=>{
-        localStorage.removeItem('groups');
+        
 
         // Loading Groups from Local Storage when Component mounts
 
