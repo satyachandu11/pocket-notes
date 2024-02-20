@@ -40,6 +40,8 @@
 
 
 
+
+
 /* Group data styling */
 .groupItem{
     display: flex;
@@ -48,6 +50,15 @@
     font-family: "Roboto", sans-serif;
     max-height: 90%;
     overflow-y: auto;
+    cursor: default;
+}
+
+.groupItem:hover{
+    background-color: rgba(47, 47, 47, 0.17);
+    border-radius: 10px;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+
 }
 
 .groupCircle{
@@ -94,4 +105,9 @@
 
 
 
+@media (max-width: 768px){
+    .mobile{
+    display: none;
+}
+}
 

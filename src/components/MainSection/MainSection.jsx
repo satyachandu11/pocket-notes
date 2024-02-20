@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './MainSection.module.css'
 import MainScreenDefault from '../MainScreenDefault/MainScreenDefault';
+import MainScreenNotes from './MainScreenNotes/MainScreenNotes';
+import { NotesContext } from '../../contexts/NotesContext';
 
-function MainSection() {
+function MainSection({ selectedGroup }) {
+
+  
+
   return (
     <div className="main-section">
-      <MainScreenDefault />
+
+      {selectedGroup ? (
+        <MainScreenNotes groupId={selectedGroup} />
+      ) : (
+        <MainScreenDefault />
+      )}
     </div>
   );
 }

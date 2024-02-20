@@ -3,16 +3,28 @@ import styles from './Sidebar.module.css';
 import CreateGrpIcon from '../../assets/CreateGrpIcon';
 import GroupSetup from '../GroupSetup/GroupSetup';
 import { GroupContext } from '../../contexts/GroupContext';
+import MainSection from '../MainSection/MainSection';
+import { MobileViewContext } from '../../contexts/MobileViewContext';
 
-function Sidebar() {
-
+function Sidebar({ onSelectGroup }) {
   const { groups } = useContext(GroupContext);
+  const { isMobileView, toggleView } = useContext(MobileViewContext);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
-  const openModal = ()=>setIsModalOpen(true);
-  const closeModal = ()=>setIsModalOpen(false);
-    
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  
+
+  const handleClickGroup = (group) => {
+    onSelectGroup(group);
+    // setIsVisible(!isVisible);
+  };
+
+  
+
   return (
     <div className="sidebar">
       <div className={styles.heading}>
@@ -26,12 +38,19 @@ function Sidebar() {
           <div>
             <ul>
               {groups.map((group) => (
-                <li key={group.id} className={styles.groupItem} >
-                  <div className={styles.groupCircle} style={{backgroundColor: group.groupColor}} >
+                <li
+                  key={group.id}
+                  className={styles.groupItem}
+                  onClick={() => handleClickGroup(group)}
+                >
+                  <div
+                    className={styles.groupCircle}
+                    style={{ backgroundColor: group.groupColor }}
+                  >
                     {group.groupNameInitial}
                   </div>
-                  <div className={styles.groupDetails} >
-                    <div className={styles.groupName} >{group.name}</div>
+                  <div className={styles.groupDetails}>
+                    <div className={styles.groupName}>{group.name}</div>
                   </div>
                 </li>
               ))}

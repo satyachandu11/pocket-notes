@@ -1,0 +1,31 @@
+.notesContainerBox {
+  font-family: "Roboto", sans-serif;
+  height: 60vh;
+  width: 100%;
+  overflow-y: auto;
+  padding: 2rem;
+  background-color: #DAE5F5;
+  
+}
+
+.noteContainer{
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  width: 67rem;
+  word-wrap: break-word;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dateTimeSpan{
+  text-align: end;
+  font-weight: 600;
+  
+}
+
+.dotIcon{
+  margin-bottom: -0.7rem;
+}

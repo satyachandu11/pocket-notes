@@ -3,22 +3,14 @@ import React, { createContext, useEffect, useState } from "react";
 const MobileViewContext = createContext();
 
 const MobileViewProvider = ({children})=>{
-    const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
+    const [isMobileView, setIsMobileView] = useState(window.innerWidth >= 768);
 
-    useEffect(()=>{
-        const handleResize = ()=>{
-            setIsMobileView(window.innerWidth <= 768);
-        }
-
-        window.addEventListener('resize', handleResize);
-
-        return ()=>{
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+    const toggleView = ()=>{
+        setIsMobileView((prevIsMobile)=> !prevIsMobile)
+    }
 
     return (
-        <MobileViewContext.Provider value={isMobileView}>
+        <MobileViewContext.Provider value={{isMobileView, toggleView}}>
             {children}
         </MobileViewContext.Provider>
     );

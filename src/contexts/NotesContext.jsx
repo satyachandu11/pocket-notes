@@ -8,27 +8,39 @@ const NotesProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
+
+    localStorage.removeItem('notes');
+
     // Load Notes from local storage
     const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
     setNotes(storedNotes);
   }, []);
 
   useEffect(() => {
+
+     localStorage.removeItem("notes");
     // Update notes in local storage whenever notes is added
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
   const addNote = (groupId, noteText, groupColor) => {
-    const newNote = { groupId, noteText, groupColor };
-    setNotes((prevNotes) => [...prevNotes, newNote]);
+    const newNote = {
+      groupId,
+      noteText,
+      groupColor,
+      timestamp: new Date().toISOString(),
+    };
+    setNotes((prevNotes) => [ newNote, ...prevNotes]);
   };
 
   const getNotesByGroupId = (groupId) => {
     return notes.filter((note) => note.groupId === groupId);
   };
 
+  
+
   return (
-    <NotesContext.Provider value={{ addNote, getNotesByGroupId }}>
+    < NotesContext.Provider value={{ addNote, getNotesByGroupId }}>
       {children}
     </NotesContext.Provider>
   );
