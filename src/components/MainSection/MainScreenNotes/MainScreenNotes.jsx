@@ -78,7 +78,7 @@ const MainScreenNotes = ({ groupId }) => {
             placeholder="Enter Your Text Here....."
             value={noteText}
             onChange={handleNotesChange}
-          />
+          /> 
           <IoSend
             size="2rem"
             className={isNoteTextEmpty ? styles.disabledIcon : styles.sendIcon}
